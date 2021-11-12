@@ -2,15 +2,16 @@
     <head>
         <meta charset="UTF-8">
         <title>Beautiful Beginnings</title>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="noindex, nofollow">
         <meta http-equiv="X-UA-Compatible" content="IE=9" />
 
-        <link rel="stylesheet" href="css/normalize.min..css"/>
+
+        <link rel="stylesheet" href="css/normalize.min.css"/>
         <link rel="stylesheet" href="css/main.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&display=swap" rel="stylesheet">
+        
     </head> 
     <body>
         <div class="page-wrap">
@@ -33,13 +34,20 @@
                     </div>
 
                     <div class="header-toggles--mobile">
+                        <div class="mobile-nav" id="mobile-navbar">
+                            <a href="#">Baby Apparel</a>
+                            <a href="#">Baby Gifts</a>
+                            <a href="#">Furniture</a>
+                        </div>
                         <a href="#">
                             <!-- need a cart icon -->
+                            <img src="images/shopping-cart.png" alt="shopping-cart" title="shopping-cart">
                             <span class="visually-hidden">Go to Cart</span>
                         </a>
-                        <a href="#" class="menu-toggle">
+                        <a href="javascript:void(0);" class="menu-toggle"  class="icon" onclick="mobileToggle()">&#9776;</a>
                             <span class="visually-hidden">Toggle Menu</span>
                         </a>
+
                     </div>
 
                 </div>
@@ -57,6 +65,7 @@
                             <input id="headerSiteSearch" type="search" placeholder="Search this site.."/>
                             <button class="site-search__button">
                                 <!-- need a search icon -->
+                                <img src="images/search.png" alt="search icon" title="search">
                                 <span class="visually-hidden">Submit Search</span>
                             </button>
                         </form>
@@ -111,22 +120,39 @@
             </header>
             <main class="page-main">
 
-                <div class="slideshow">
-                    <section class="slideshow__slide slide">
-                        <figure class="slide__bg">
-                            <img src="images/bb-slideshow-example-1.jpg" />
-                            <figcaption>Baby Dean - Wheaton, illinois</figcaption>
-                        </figure>
-                        <div class="slide__content">
-                            <a href="#" class="cta">
-                                <h2 class="cta__title">Crib Bedding Sale</h2>
-                                <p class="cta__description">Save up to 50% off on select crib bedding now through Memorial Day!</p>
-                                <span class="button button--primary">Shop Crib Beding</span>
-                            </a>
-                        </div>
+                <div class="slideshow-container slideshow">
+
+                    <section class="mySlides fade">
+                      <div class="numbertext">1 / 2</div>
+                      <img src="images/bb-slideshow-example-1.jpg" style="width:100%">
+                      <figcaption>Baby Dean - Wheaton, illinois</figcaption>
+                      <div class="slide__content">
+                        <a href="#" class="cta">
+                            <h2 class="cta__title">Crib Bedding Sale</h2>
+                            <p class="cta__description">Save up to 50% off on select crib bedding now through Memorial Day!</p>
+                            <span class="button button--primary">Shop Crib Beding</span>
+                        </a>
+                    </div>
+                      
                     </section>
-                    <!-- need another slide and to setup slideshow functioanlity -->
-                </div>
+                       <!-- need another slide and to setup slideshow functionality -->
+                    <section class="mySlides fade">
+                      <div class="numbertext">2 / 2</div>
+                      <img src="	https://www.w3schools.com/howto/img_snow_wide.jpg" style="width:100%">
+                      <figcaption> Second Baby Paul - Royal Oak, Michigan</figcaption>
+                      <div class="slide__content">
+                        <a href="#" class="cta">
+                            <h2 class="cta__title"> Crib Bedding</h2>
+                            <p class="cta__description">Second Save up to 50% off on select crib bedding now through Memorial Day!</p>
+                            <span class="button button--primary">Second Shop Crib Bedding</span>
+                        </a>
+                    </div>
+                    </section>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    
+                    </div>
 
                 <section class="featured-widget">
                     <header class="featured-widget__header">
@@ -160,7 +186,12 @@
                         </ul>
                     </div>
                 </section>
-
+                <div class="accordion-expander">
+                    <button class="accordion">Expander Accordion </button>
+                    <div class="panel">
+                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are so many unique and beautiful baby gifts to select from including baby burp cloths, designer diaper bags, baby clothes and many baby toys. Whether you are looking for Christening gifts, a baby shower gift, a newborn gift or even a gift for a child’s third birthday, we have many baby gifts to choose from. .</p>
+                    </div>
+                </div>
                 <div class="wysiwyg">
                     <h2>We Love Babies</h2>
                     <p>Beautiful Beginnings offers finely crafted baby cribs as well as complete suites of nursery furniture, from traditional to contemporary. All of the finest names in crib bedding and baby blankets are featured with thousands of fabrics available to customize your baby crib. We offer everything you need to personalize your baby nursery with one of a kind nursery decor from distinctive lamps, clocks, wall hangings, picture frames and other decorative items.</p>
@@ -170,7 +201,8 @@
 
             </main>
             <footer class="page-footer">
-                <div class="footer-top">
+                <div class="container">
+                 <div class="row footer-top">
 
                     <div class="page-footer__column">
                         <div class="expander">
@@ -236,20 +268,24 @@
                         <div class="site-social">
                             <h2>Follow Us</h2>
                             <ul class="social-list">
-                                <li>
+                                <!-- <li>
                                     <a href="#">Facebook</a>
+                                    <img src="images/social-facebook.png" alt="search icon" title="search">
                                 </li>
                                 <li>
                                     <a href="#">Twitter</a>
+                                    <img src="images/social-twitter.png" alt="search icon" title="search">
                                 </li>
                                 <li>
                                     <a href="#">Pinterest</a>
+                                    <img src="images/social-facebook.png" alt="search icon" title="search">
                                 </li>
                                 <li>
                                     <a href="#">Youtube</a>
-                                </li>
+                                    <img src="images/social-facebook.png" alt="search icon" title="search">
+                                </li> -->
                                 <li>
-                                    <a href="#">Google Plus</a>
+                                    <img src="images/social-sprite.png" alt="search icon" title="search">
                                 </li>
                             </ul>
                         </div>
@@ -282,7 +318,11 @@
                     </div>
 
                 </div>
+                </div>
             </footer>
         </div>
     </body>
 </html>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/main.js"></script>
